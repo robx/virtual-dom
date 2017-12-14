@@ -106,6 +106,7 @@ onWithOptions =
 type alias Options =
   { stopPropagation : Bool
   , preventDefault : Bool
+  , capturePointer : Bool
   }
 
 
@@ -113,6 +114,7 @@ defaultOptions : Options
 defaultOptions =
   { stopPropagation = False
   , preventDefault = False
+  , capturePointer = False
   }
 
 

@@ -262,7 +262,9 @@ function equalEvents(a, b)
 {
 	if (a.options !== b.options)
 	{
-		if (a.options.stopPropagation !== b.options.stopPropagation || a.options.preventDefault !== b.options.preventDefault)
+		if (a.options.stopPropagation !== b.options.stopPropagation
+			|| a.options.preventDefault !== b.options.preventDefault
+			|| a.options.capturePointer !== b.options.caputerPointer)
 		{
 			return false;
 		}
@@ -459,6 +461,10 @@ function makeEventHandler(eventNode, info)
 			if (options.preventDefault)
 			{
 				event.preventDefault();
+			}
+			if (options.capturePointer)
+			{
+				eventNode.setPointerCapture(event.pointerId);
 			}
 
 			var message = value._0;

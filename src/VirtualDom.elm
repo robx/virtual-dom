@@ -231,11 +231,14 @@ onWithOptions =
 event stops traveling through the DOM so it will not trigger any other event
 listeners. If `preventDefault` is true, any built-in browser behavior related
 to the event is prevented. For example, this is used with touch events when you
-want to treat them as gestures of your own, not as scrolls.
+want to treat them as gestures of your own, not as scrolls. If `capturePointer`
+is true, further pointer events for the current pointer are captured by the
+event node.
 -}
 type alias Options =
   { stopPropagation : Bool
   , preventDefault : Bool
+  , capturePointer : Bool
   }
 
 
@@ -244,12 +247,14 @@ type alias Options =
     defaultOptions =
         { stopPropagation = False
         , preventDefault = False
+        , capturePointer = False
         }
 -}
 defaultOptions : Options
 defaultOptions =
   { stopPropagation = False
   , preventDefault = False
+  , capturePointer = False
   }
 
 
