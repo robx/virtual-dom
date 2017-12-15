@@ -233,12 +233,14 @@ listeners. If `preventDefault` is true, any built-in browser behavior related
 to the event is prevented. For example, this is used with touch events when you
 want to treat them as gestures of your own, not as scrolls. If `capturePointer`
 is true, further pointer events for the current pointer are captured by the
-event node.
+event listener. If `releasePointer` is true, pointer capture by the event
+listener is canceled.
 -}
 type alias Options =
   { stopPropagation : Bool
   , preventDefault : Bool
   , capturePointer : Bool
+  , releasePointer : Bool
   }
 
 
@@ -248,6 +250,7 @@ type alias Options =
         { stopPropagation = False
         , preventDefault = False
         , capturePointer = False
+        , releasePointer = False
         }
 -}
 defaultOptions : Options
@@ -255,6 +258,7 @@ defaultOptions =
   { stopPropagation = False
   , preventDefault = False
   , capturePointer = False
+  , releasePointer = False
   }
 
 

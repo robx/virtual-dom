@@ -264,7 +264,8 @@ function equalEvents(a, b)
 	{
 		if (a.options.stopPropagation !== b.options.stopPropagation
 			|| a.options.preventDefault !== b.options.preventDefault
-			|| a.options.capturePointer !== b.options.capturePointer)
+			|| a.options.capturePointer !== b.options.capturePointer
+			|| a.options.releasePointer !== b.options.releasePointer)
 		{
 			return false;
 		}
@@ -464,7 +465,11 @@ function makeEventHandler(eventNode, info)
 			}
 			if (options.capturePointer)
 			{
-				event.target.setPointerCapture(event.pointerId);
+				event.currentTarget.setPointerCapture(event.pointerId);
+			}
+			if (options.releasePointer)
+			{
+				event.currentTarget.releasePointerCapture(event.pointerId);
 			}
 
 			var message = value._0;
