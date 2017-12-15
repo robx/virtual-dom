@@ -264,7 +264,7 @@ function equalEvents(a, b)
 	{
 		if (a.options.stopPropagation !== b.options.stopPropagation
 			|| a.options.preventDefault !== b.options.preventDefault
-			|| a.options.capturePointer !== b.options.caputerPointer)
+			|| a.options.capturePointer !== b.options.capturePointer)
 		{
 			return false;
 		}
