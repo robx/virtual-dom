@@ -464,7 +464,7 @@ function makeEventHandler(eventNode, info)
 			}
 			if (options.capturePointer)
 			{
-				eventNode.setPointerCapture(event.pointerId);
+				event.target.setPointerCapture(event.pointerId);
 			}
 
 			var message = value._0;
